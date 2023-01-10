@@ -11,6 +11,8 @@ from os.path import exists
 markdownHeader = {'#': '<h1> </h1>', '##': '<h2> </h2>', '###': '<h3> </h3>',
                   '####': '<h4> </h4>', '#####': '<h5> </h5>', '######': '<h6> </h6>'}
 
+markdownList = {'-': '<li> </li>', '*': '<li> </li>'}
+
 if __name__ == '__main__':
 
     """Check if number of arguments == 2"""
@@ -34,9 +36,10 @@ if __name__ == '__main__':
         exit(1)
 
     """Opening the markdown file for file operations"""
-
+    ulCount = 0
     with open(sys.argv[1]) as markdown:
         line = True
+
         while line:
             line = markdown.readline()
             if line.startswith('#'):  # Headings operation
@@ -46,6 +49,15 @@ if __name__ == '__main__':
                     hashL = len(hash) + 1
                     htmlFile.write('{}{}{}\n'.format(
                         markdownHeader[hash].split(' ')[0], line[hashL: -1], markdownHeader[hash].split(' ')[1]))
+
+            if line.startswith('-'):  # Unordered list operation
+                with open(sys.argv[2], 'a') as htmlFile:
+                    if ulCount == 0:
+                        htmlFile.write('<ul>\n')
+                    else:
+                        htmlFile.write('\t{}{}{}\n'.format(
+                            markdownList['-'].split(' ')[0], line[2: -1], markdownList['-'].split(' ')[1]))
+                    ulCount += 1
 
             else:
                 with open(sys.argv[2], 'a') as htmlFile:
