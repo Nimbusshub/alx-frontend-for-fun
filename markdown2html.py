@@ -7,26 +7,26 @@ from os.path import exists
         Arg 1: Markdown file
         Arg 2: output file name (HTML)
     """
-if __name__ == 'main':
+if __name__ == '__main__':
 
     """Check if number of arguments == 2"""
 
-    if sys.argv != 2:
-        sys.stderr.write("Usage: ./markdown2html.py README.md README.html")
+    if len(sys.argv) != 3:
+        sys.stderr.write("Usage: ./markdown2html.py README.md README.html\n")
         exit(1)
 
     """Check if input file is a correct markdown file"""
-    if "." in sys.argv[0]:
-        newArr = sys.argv[0].split('.')
+    if "." in sys.argv[1]:
+        newArr = sys.argv[1].split('.')
         if len(newArr) != 2:
-            sys.stderr.write('Bad Markdown file')
+            sys.stderr.write('Bad Markdown file\n')
             exit(1)
-        if newArr[1] != ".md":
-            sys.stderr.write('First argument must a markdown file')
+        if newArr[1] != "md":
+            sys.stderr.write('First argument must a markdown file\n')
 
     """Check if markdown file exist"""
-    if exists(sys.argv[0]) == False:
-        sys.stderr.write('Missing {}'.format(sys.argv[0]))
+    if exists(sys.argv[1]) == False:
+        sys.stderr.write('Missing {}\n'.format(sys.argv[1]))
         exit(1)
 
     exit(0)
