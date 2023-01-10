@@ -1,4 +1,4 @@
-# ALX Frontend For End Repository
+# ALX Frontend For Fun Repository
 
 This repository contains files on optional projects done during alx frontend specialization
 
