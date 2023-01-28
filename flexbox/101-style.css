@@ -1,0 +1,76 @@
+:root {
+  --color-box1: green;
+  --color-box2: blue;
+  --color-box3: rgb(57, 57, 102);
+  --color-box4: purple;
+  --color-box5: orange;
+
+  --color-text: white;
+
+  --text-font-size1: 20px;
+  --text-font-size2: 40px;
+  --text-font-size3: 60px;
+
+  --element-size1: 4rem;
+  --element-size2: 6rem;
+  --element-size3: 10rem;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: var(--color-text);
+  font-family: 'Times New Roman', Times, serif;
+  justify-content: center;
+}
+
+.box1,
+.box5 {
+  flex-basis: 8rem;
+  height: var(--element-size1);
+  font-size: var(--text-font-size1);
+  line-height: var(--element-size1);
+  justify-items: center;
+}
+
+.box2,
+.box4 {
+  flex-basis: 14rem;
+  height: var(--element-size2);
+  font-size: var(--text-font-size2);
+  line-height: var(--element-size2);
+}
+
+.box3 {
+  flex-basis: 20rem;
+  background-color: var(--color-box3);
+  height: var(--element-size3);
+  font-size: var(--text-font-size3);
+  line-height: var(--element-size3);
+}
+
+.box1 {
+  background-color: var(--color-box1);
+}
+
+.box2 {
+  background-color: var(--color-box2);
+}
+
+.box4 {
+  background-color: var(--color-box4);
+}
+
+.box5 {
+  background-color: var(--color-box5);
+}
