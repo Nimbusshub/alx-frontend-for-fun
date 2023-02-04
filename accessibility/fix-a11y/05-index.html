@@ -213,13 +213,15 @@
                   <label class="visually-hidden" for="email"></label>
                   <input
                     class="form-control"
-                    type="text"
+                    type="email"
                     name="email"
-                    placeholder="Enter Email Address"
                     id="email"
+                    autocomplete="email"
+                    required
+                    aria-required="true"
                   />
                   <div class="input-group-btn">
-                    <a class="btn" type="submit">Validate</a>
+                    <button class="btn" type="submit">Validate</button>
                   </div>
                 </div>
               </form>
