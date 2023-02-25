@@ -1,0 +1,19 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  font-size: 75%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+ul {
+  display: flex;
+  justify-content: space-evenly;
+}
